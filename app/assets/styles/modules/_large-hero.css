@@ -7,12 +7,17 @@
   }
 
   &__text-content {
+    padding-top: 88px;/*header 투명부분까지 내려옴*/
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
     width: 100%;
     text-align: center;
+
+    @mixin atMedium{
+      padding-top: 60px;/*header 투명부분까지 내려옴*/
+    }
   }
 
   &__title {
