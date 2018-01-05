@@ -10,7 +10,12 @@
   }
 
   @mixin atMedium {
+    position: fixed;
     background-color: rgba(var(--mainBlue), .3);
+
+    &--dark {
+      background-color: rgba(23, 51, 72, .85);
+    }
   }
 
   &__btn-container {
@@ -24,6 +29,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%) scale(.8);
+    transition: transform .3s ease-out;
     transform-origin: 50% 0;
     background-color: var(--mainBlue);
     padding: 25px 36px;
@@ -31,6 +37,14 @@
     @mixin atMedium {
       left: auto;
       transform: translateX(0);
+
+      .site-header--dark &{
+        /*
+          So this selector will target the logo only when the dark header is being used.
+          따라서이 선택기는 어두운 헤더가 사용될 때만 로고를 타겟팅합니다.
+        */
+        transform: scale(.55);
+      }
 
     }
   }
